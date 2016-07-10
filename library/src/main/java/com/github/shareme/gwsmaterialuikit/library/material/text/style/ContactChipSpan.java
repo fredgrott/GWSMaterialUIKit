@@ -25,6 +25,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Typeface;
+import android.support.annotation.NonNull;
 import android.text.BoringLayout;
 import android.text.Layout;
 import android.text.TextPaint;
@@ -34,6 +35,7 @@ import android.text.style.ReplacementSpan;
 /**
  * Created by Rey on 1/21/2015.
  */
+@SuppressWarnings("unused")
 public class ContactChipSpan extends ReplacementSpan {
 
     private Paint mPaint;
@@ -101,7 +103,7 @@ public class ContactChipSpan extends ReplacementSpan {
     }
 
     @Override
-    public int getSize(Paint paint, CharSequence text, int start, int end, Paint.FontMetricsInt fm) {
+    public int getSize(@NonNull Paint paint, CharSequence text, int start, int end, Paint.FontMetricsInt fm) {
         if (fm != null) {
             int cy = (fm.ascent + fm.descent) / 2;
             fm.ascent = Math.min(fm.ascent, cy - mHeight / 2);
@@ -113,8 +115,9 @@ public class ContactChipSpan extends ReplacementSpan {
         return mWidth;
     }
 
+    @SuppressWarnings("SuspiciousNameCombination")
     @Override
-    public void draw(Canvas canvas, CharSequence text, int start, int end, float x, int top, int y, int bottom, Paint paint) {
+    public void draw(@NonNull Canvas canvas, CharSequence text, int start, int end, float x, int top, int y, int bottom, @NonNull Paint paint) {
         canvas.save();
 
         canvas.translate(x, top);

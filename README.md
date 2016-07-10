@@ -7,7 +7,12 @@ many libs(aars) and since I want to control the diamond dependency problem
 the UI back ported libs have been combined into one UI library.
 
 The main important feature of the is library is that it integrates with 
-how the android support internals work as far as Theme, Type, etc.
+how the android support internals work as far as Theme, Type, etc. It works 
+this way, the custom views we create are extensions of custom stuff in the 
+GWSMaterialUIKit library that extends views/widgets from the AppCompat 
+Android Support library stuff so that we get the benefits of tint, etc(hopefully, 
+android engineers adopt that pattern for other UI feature changes past api 24 as 
+that would make ti oh so much easier to deal with back ports).
 
 In a start-up with a growing android team you want the UI base 3rd party 
 widgets combined into one internal library that your team contributes 

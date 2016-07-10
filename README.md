@@ -8,6 +8,11 @@ the UI back ported libs have been combined into one UI library.
 
 The main important feature of the is library is that it integrates with 
 how the android support internals work as far as Theme, Type, etc.
+
+In a start-up with a growing android team you want the UI base 3rd party 
+widgets combined into one internal library that your team contributes 
+to and controls as the main goal in the beginning of a start-up is to hose 
+out new features to somewhat bootstrap increasing the MAUs.
  
 This is a temporary library when targeting stuff under api 21 and its 
 expected that when developers are focusing on targeting as minSDk api 21 
